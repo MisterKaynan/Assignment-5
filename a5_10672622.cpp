@@ -24,7 +24,7 @@ int main()
 
 
 
-int x;
+int sh;
 int MaleCount;
 int FemaleCount;
 studentType sark;   // -------- Since He gave sh some Advice :)
@@ -35,7 +35,7 @@ double m;
 
 
 
-for (sh = 1; sh < 6; sh = x+1;);
+for (sh = 1; sh < 6; sh = sh+1)
     {
     cout << "Enter ID" <<endl;
     cin >> sark.IDNo[sh];
@@ -63,53 +63,48 @@ for (sh = 1; sh < 6; sh = x+1;);
 double m = sark.Score[sh];
 string q =  sark.Grade[sh];
 
-    if{
-        (m <= 39)
+    if(m <= 39){
        q = "F";
     }
-   else if
+   else if  (m <=49 && m >=40)
    {
-       (m <=49 && m >=40)
-      q = "E";
+     q = "E";
    }
 
 
- else   if
+ else   if (m <=59 && m >=50)
  {
-     (m <=59 && m >=50)
-        q = "D";
+   q = "D";
  }
 
 
-  else  if 
+  else  if (m <=69 && m >=60)
   {
-      (m <=69 && m >=60)
-       q = "C";
+   q = "C";
   }
 
 
- else   if
+ else if  (m <=79 && m >=70)
  {
-     (m <=79 && m >=70)
-       q = "B";
+  q = "B";
  }
 
 
-else    if 
+else if (m >=80 && m <= 100)
 {
-    (m >=80 && m <= 100)
-        q = "A";
+ q = "A";
 }
     }
     cout << endl;
-if
+if (sark.Gender[sh] ==  1  )
 {
-    (sark.Gender[sh] ==  "M"  )
+
 MaleCount = MaleCount + 1;
 }
 
-else if{
-    (sark.Gender[sh] ==  "F" )
+else if (sark.Gender[sh] != 1  )
+    {
+
     FemaleCount = FemaleCount + 1;
 }
 
@@ -120,7 +115,12 @@ else if{
 
  cout << " Id " << "  " << " Name " << "  " << " Age " << "  " <<  " Gender "  << "  " <<  " Score " << "  " <<  " Grade "  <<endl;
     cout << "************************************************************************************" <<endl;
-for ( sh =1 sh < 6; sh = sh++)
+string q =  sark.Grade[sh];
+double averageScore;
+double averageAge;
+
+
+for ( sh =1; sh < 6; sh = sh++)
 {
 
 double averageScore = (averageScore + sark.Score[sh])/5;
@@ -142,18 +142,18 @@ cout << "AVERAGE AGE:" << averageAge << endl;
 
 cout << "MALE COUNT:" << MaleCount <<endl;
 cout << "FEMALE COUNT:" << FemaleCount <<endl;
-    
-    
-    
-    
-    
+
+
+
+
+
 ofstream a5_10672622;
 a5_10672622.open("Codes And Jams.txt", ios::app);
-    
-    
+
+
 a5_10672622 << " Id " << "  " << " Name " << "  " << " Age " << "  " <<  " Gender "  << "  " <<  " Score " << "  " <<  " Grade "  <<endl;
 a5_10672622 << "************************************************************************************" <<endl;
-for ( sh =1 sh < 6; sh = sh++)
+for ( sh =1; sh < 6; sh = sh++)
 {
 
 double averageScore = (averageScore + sark.Score[sh])/5;
@@ -176,7 +176,7 @@ a5_10672622 << "AVERAGE AGE:" << averageAge << endl;
 a5_10672622 << "MALE COUNT:" << MaleCount <<endl;
 a5_10672622 << "FEMALE COUNT:" << FemaleCount <<endl;
 a5_10672622.close();
-    
+
 
 
 
